@@ -70,19 +70,25 @@ a {
     justify-content: center;
     align-items: center;
     gap: 50px;
-    padding: 60px 8%;
+    padding: 70px 8%;
+    background: linear-gradient(135deg, #0d0d0d 55%, #12330c);
 }
 
 .presentacion img {
-    width: 45%;
-    max-width: 520px;
+    width: 42%;
+    max-width: 500px;
     border-radius: 12px;
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.18);
+}
+
+.presentacion-contenido {
+    max-width: 620px;
 }
 
 .presentacion h1 {
-    margin: 10px 0 20px;
-    color: #39ff14;
-    font-size: 42px;
+    margin: 12px 0 22px;
+    font-size: 48px;
+    line-height: 1.15;
 }
 
 .presentacion p {
@@ -93,6 +99,9 @@ a {
 .destacado {
     color: #39ff14;
     text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .boton, .tarjeta a {
@@ -105,12 +114,66 @@ a {
     font-weight: bold;
 }
 
+.presentacion-botones {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.boton-secundario {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 11px 20px;
+    color: #39ff14;
+    border: 1px solid #39ff14;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.boton:hover, .tarjeta a:hover {
+    background-color: #ffffff;
+}
+
+.boton-secundario:hover {
+    color: #0d0d0d;
+    background-color: #39ff14;
+}
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 25px 8%;
+    background-color: #111111;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    text-align: center;
+}
+
+.beneficios div {
+    padding: 12px 25px;
+    border-right: 1px solid #333333;
+}
+
+.beneficios div:last-child {
+    border-right: none;
+}
+
+.beneficios strong {
+    color: #39ff14;
+}
+
+.beneficios p {
+    margin-top: 7px;
+    color: #cccccc;
+}
+
 .seccion-categorias, .pagina-categoria {
     padding: 60px 8%;
     text-align: center;
 }
 
 .seccion-categorias h2, .pagina-categoria h1 {
+    margin-top: 8px;
     margin-bottom: 35px;
     color: #39ff14;
 }
@@ -124,8 +187,31 @@ a {
 .tarjeta {
     padding: 30px 20px;
     background-color: #171717;
-    border: 1px solid #39ff14;
+    border: 1px solid #333333;
     border-radius: 8px;
+}
+
+.tarjeta:hover {
+    border-color: #39ff14;
+}
+
+.categoria-icono {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 22px;
+    color: #0d0d0d;
+    background-color: #39ff14;
+    border-radius: 50%;
+    font-family: "Arial Black", Arial, sans-serif;
+}
+
+.categoria-icono img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
 }
 
 .tarjeta h3 {
@@ -140,6 +226,73 @@ a {
 .pagina-categoria > p {
     max-width: 700px;
     margin: 0 auto 35px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    text-align: left;
+}
+
+.producto-card {
+    overflow: hidden;
+    padding: 20px;
+    background-color: #171717;
+    border: 1px solid #333333;
+    border-radius: 10px;
+}
+
+.producto-card:hover {
+    border-color: #39ff14;
+}
+
+.producto-imagen {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #39ff14;
+    background-color: #0d0d0d;
+    border: 1px solid #333333;
+    border-radius: 7px;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 42px;
+}
+
+.producto-card img.producto-imagen {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    padding: 15px;
+}
+
+.producto-categoria {
+    color: #39ff14;
+    font-size: 14px;
+}
+
+.producto-card h2 {
+    margin: 10px 0;
+    font-size: 21px;
+}
+
+.producto-card p {
+    min-height: 48px;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+.producto-precio {
+    display: block;
+    margin-top: 18px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.producto-card button {
+    width: 100%;
 }
 
 .pagina-formulario {
