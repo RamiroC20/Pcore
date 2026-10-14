@@ -5,70 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PCore | Almacenamiento</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../scripts/navbar.js" defer></script>
+    <script src="../scripts/productos.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a class="marca" href="../index.html"><img src="../assets/img/logo-navbar.png" alt="Logo de PCore"><span>PCORE</span></a>
-            <div class="nav-links">
-                <a href="../index.html">Home</a><a href="./procesadores.html">Procesadores</a><a href="./placas-video.html">Placas de video</a><a href="./memorias-ram.html">Memorias RAM</a><a href="./almacenamiento.html">Almacenamiento</a><a href="./login.html">Iniciar sesión</a><a href="./registro.html">Registrarse</a><a class="logout" href="../index.html">Logout</a>
-            </div>
-        </nav>
-    </header>
+    <header id="header-principal" data-prefijo=".."></header>
+
     <main class="pagina-categoria">
         <h1>Almacenamiento</h1>
         <p>Discos SSD y HDD para guardar tus programas, juegos y archivos.</p>
-        <section class="productos">
-            <article class="producto-card">
-                <img class="producto-imagen" src="../assets/img/kingston-nv2-1tb.webp" alt="Unidad SSD Kingston NV2 1 TB">
-                <span class="producto-categoria">Almacenamiento</span>
-                <h2>Kingston NV2 1 TB</h2>
-                <p>Unidad SSD NVMe rápida para sistema y archivos.</p>
-                <strong class="producto-precio">$95.000</strong>
-                <button type="button">Agregar al carrito</button>
-            </article>
-            <article class="producto-card">
-                <img class="producto-imagen" src="../assets/img/samsung-980-pro-1tb.webp" alt="Unidad SSD Samsung 980 Pro 1 TB">
-                <span class="producto-categoria">Almacenamiento</span>
-                <h2>Samsung 980 Pro 1 TB</h2>
-                <p>Unidad SSD NVMe de alto rendimiento.</p>
-                <strong class="producto-precio">$165.000</strong>
-                <button type="button">Agregar al carrito</button>
-            </article>
-            <article class="producto-card">
-                <img class="producto-imagen" src="../assets/img/crucial-bx500-480gb.webp" alt="Unidad SSD Crucial BX500 480 GB">
-                <span class="producto-categoria">Almacenamiento</span>
-                <h2>Crucial BX500 480 GB</h2>
-                <p>Unidad SSD SATA ideal para acelerar tu computadora.</p>
-                <strong class="producto-precio">$52.000</strong>
-                <button type="button">Agregar al carrito</button>
-            </article>
-            <article class="producto-card">
-                <img class="producto-imagen" src="../assets/img/wd-blue-sn570-1tb.webp" alt="Unidad SSD WD Blue SN570 1 TB">
-                <span class="producto-categoria">Almacenamiento</span>
-                <h2>WD Blue SN570 1 TB</h2>
-                <p>Unidad SSD NVMe confiable para uso diario.</p>
-                <strong class="producto-precio">$110.000</strong>
-                <button type="button">Agregar al carrito</button>
-            </article>
-            <article class="producto-card">
-                <img class="producto-imagen" src="../assets/img/seagate-barracuda-2tb.webp" alt="Disco rígido Seagate Barracuda 2 TB">
-                <span class="producto-categoria">Almacenamiento</span>
-                <h2>Seagate Barracuda 2 TB</h2>
-                <p>Disco rígido para guardar juegos y archivos.</p>
-                <strong class="producto-precio">$98.000</strong>
-                <button type="button">Agregar al carrito</button>
-            </article>
-            <article class="producto-card">
-                <img class="producto-imagen" src="../assets/img/wd-blue-1tb.webp" alt="Disco rígido WD Blue 1 TB">
-                <span class="producto-categoria">Almacenamiento</span>
-                <h2>WD Blue 1 TB</h2>
-                <p>Disco rígido confiable para almacenamiento general.</p>
-                <strong class="producto-precio">$72.000</strong>
-                <button type="button">Agregar al carrito</button>
-            </article>
-        </section>
+        <section class="productos" id="contenedor-productos" data-categoria="almacenamiento"></section>
     </main>
+
     <footer><p>PCore - Componentes de PC</p></footer>
 </body>
 </html>
