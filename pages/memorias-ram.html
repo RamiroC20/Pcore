@@ -8,13 +8,13 @@
     <script src="../scripts/navbar.js" defer></script>
     <script src="../scripts/productos.js" defer></script>
 </head>
-<body>
+<body data-ruta-json="../data/productos.json" data-prefijo="..">
     <header id="header-principal" data-prefijo=".."></header>
 
     <main class="pagina-categoria">
         <h1>Memorias RAM</h1>
         <p>Mejorá la velocidad y el rendimiento de tu computadora.</p>
-        <section class="productos" id="contenedor-productos" data-categoria="memorias-ram"></section>
+        <section class="productos" data-productos data-categoria="memorias-ram"></section>
     </main>
 
     <footer><p>PCore - Componentes de PC</p></footer>

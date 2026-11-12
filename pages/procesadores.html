@@ -8,13 +8,13 @@
     <script src="../scripts/navbar.js" defer></script>
     <script src="../scripts/productos.js" defer></script>
 </head>
-<body>
+<body data-ruta-json="../data/productos.json" data-prefijo="..">
     <header id="header-principal" data-prefijo=".."></header>
 
     <main class="pagina-categoria">
         <h1>Procesadores</h1>
         <p>Encontrá procesadores para gaming, estudio, trabajo y uso diario.</p>
-        <section class="productos" id="contenedor-productos" data-categoria="procesadores"></section>
+        <section class="productos" data-productos data-categoria="procesadores"></section>
     </main>
 
     <footer><p>PCore - Componentes de PC</p></footer>

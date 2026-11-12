@@ -70,6 +70,11 @@ a {
     letter-spacing: 0;
 }
 
+.usuario-navbar {
+    color: #39ff14;
+    font-size: 13px;
+}
+
 .presentacion {
     min-height: 500px;
     display: flex;
@@ -322,6 +327,111 @@ a {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
+}
+
+.destacados-home {
+    padding: 60px 8%;
+}
+
+.destacados-home > h2 {
+    margin: 8px 0 40px;
+    color: #39ff14;
+    font-size: 32px;
+}
+
+.destacados-home > h3 {
+    margin: 45px 0 20px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.mensaje-error {
+    padding: 20px;
+    color: #ff6b6b;
+    background-color: #171717;
+    border: 1px solid #ff6b6b;
+    border-radius: 8px;
+}
+
+.pagina-carrito {
+    min-height: 70vh;
+    padding: 60px 10%;
+}
+
+.pagina-carrito h1 {
+    margin: 8px 0 35px;
+    color: #39ff14;
+}
+
+.carrito-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.carrito-item {
+    display: grid;
+    grid-template-columns: 150px 1fr 120px;
+    align-items: center;
+    gap: 25px;
+    padding: 18px;
+    background-color: #171717;
+    border: 1px solid #333333;
+    border-radius: 10px;
+}
+
+.carrito-item img {
+    width: 150px;
+    height: 110px;
+    padding: 8px;
+    background-color: #0d0d0d;
+    object-fit: contain;
+    border-radius: 7px;
+}
+
+.carrito-info span {
+    color: #39ff14;
+    font-size: 13px;
+}
+
+.carrito-info h2 {
+    margin: 7px 0;
+    font-size: 20px;
+}
+
+.carrito-info p {
+    margin-bottom: 8px;
+    color: #cccccc;
+}
+
+.boton-eliminar {
+    margin-top: 0;
+    color: #ffffff;
+    background-color: #a52525;
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+    padding: 22px;
+    background-color: #171717;
+    border-top: 2px solid #39ff14;
+    font-size: 24px;
+}
+
+.carrito-total strong {
+    color: #39ff14;
+}
+
+.carrito-vacio {
+    padding: 50px;
+    background-color: #171717;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .pagina-formulario {

@@ -6,8 +6,9 @@
     <title>PCore | Inicio</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <script src="./scripts/navbar.js" defer></script>
+    <script src="./scripts/productos.js" defer></script>
 </head>
-<body>
+<body data-ruta-json="./data/productos.json" data-prefijo=".">
     <header id="header-principal" data-prefijo="."></header>
 
     <main>
@@ -18,7 +19,7 @@
                 <p>Encontrá procesadores, placas de video, memorias y almacenamiento para armar el equipo que necesitás.</p>
                 <div class="presentacion-botones">
                     <a class="boton" href="#categorias">Ver categorías</a>
-                    <a class="boton-secundario" href="./pages/registro.html">Crear cuenta</a>
+                    <a class="boton-secundario" href="./pages/carrito.html">Ver carrito</a>
                 </div>
             </div>
             <img src="./assets/img/logo-principal.png" alt="PCore Componentes de PC">
@@ -76,6 +77,23 @@
                     <a href="./pages/almacenamiento.html">Ver categoría</a>
                 </article>
             </div>
+        </section>
+
+        <section class="destacados-home">
+            <p class="destacado">Productos destacados</p>
+            <h2>Elegidos para vos</h2>
+
+            <h3>Procesadores</h3>
+            <div class="productos" data-productos data-categoria="procesadores" data-limite="3"></div>
+
+            <h3>Placas de video</h3>
+            <div class="productos" data-productos data-categoria="placas-video" data-limite="3"></div>
+
+            <h3>Memorias RAM</h3>
+            <div class="productos" data-productos data-categoria="memorias-ram" data-limite="3"></div>
+
+            <h3>Almacenamiento</h3>
+            <div class="productos" data-productos data-categoria="almacenamiento" data-limite="3"></div>
         </section>
     </main>
 
