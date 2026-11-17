@@ -1,5 +1,6 @@
 const contenedorCarrito = document.querySelector("#contenedor-carrito");
 const totalCarrito = document.querySelector("#total-carrito");
+const botonVaciarCarrito = document.querySelector("#vaciar-carrito");
 
 function formatearPrecioCarrito(precio) {
     return new Intl.NumberFormat("es-AR", {
@@ -20,6 +21,7 @@ function guardarCarrito(carrito) {
 function mostrarCarrito() {
     const carrito = obtenerCarritoGuardado();
     contenedorCarrito.innerHTML = "";
+    botonVaciarCarrito.disabled = carrito.length === 0;
 
     if (carrito.length === 0) {
         contenedorCarrito.innerHTML = `
@@ -41,7 +43,11 @@ function mostrarCarrito() {
                 <span>${producto.etiqueta}</span>
                 <h2>${producto.titulo}</h2>
                 <p>${producto.descripcion}</p>
-                <p>Cantidad: ${producto.cantidad}</p>
+                <div class="cantidad-carrito">
+                    <button type="button" data-accion="restar" data-id="${producto.id}" aria-label="Restar una unidad de ${producto.titulo}">−</button>
+                    <span>Cantidad: ${producto.cantidad}</span>
+                    <button type="button" data-accion="sumar" data-id="${producto.id}" aria-label="Sumar una unidad de ${producto.titulo}">+</button>
+                </div>
                 <strong>${formatearPrecioCarrito(producto.precio * producto.cantidad)}</strong>
             </div>
             <button class="boton-eliminar" type="button" data-id="${producto.id}">Eliminar</button>
@@ -57,17 +63,43 @@ function mostrarCarrito() {
 }
 
 contenedorCarrito.addEventListener("click", (evento) => {
-    if (!evento.target.classList.contains("boton-eliminar")) {
+    const productoId = Number(evento.target.dataset.id);
+
+    if (evento.target.classList.contains("boton-eliminar")) {
+        const carritoActualizado = obtenerCarritoGuardado().filter((producto) => {
+            return producto.id !== productoId;
+        });
+
+        guardarCarrito(carritoActualizado);
+        mostrarCarrito();
+        window.dispatchEvent(new Event("carritoActualizado"));
         return;
     }
 
-    const productoId = Number(evento.target.dataset.id);
-    const carritoActualizado = obtenerCarritoGuardado().filter((producto) => {
-        return producto.id !== productoId;
-    });
+    if (!evento.target.dataset.accion) {
+        return;
+    }
 
-    guardarCarrito(carritoActualizado);
+    const carrito = obtenerCarritoGuardado();
+    const producto = carrito.find((item) => item.id === productoId);
+
+    if (evento.target.dataset.accion === "sumar") {
+        producto.cantidad++;
+    }
+
+    if (evento.target.dataset.accion === "restar" && producto.cantidad > 1) {
+        producto.cantidad--;
+    }
+
+    guardarCarrito(carrito);
     mostrarCarrito();
+    window.dispatchEvent(new Event("carritoActualizado"));
+});
+
+botonVaciarCarrito.addEventListener("click", () => {
+    localStorage.removeItem("carritoPcore");
+    mostrarCarrito();
+    window.dispatchEvent(new Event("carritoActualizado"));
 });
 
 mostrarCarrito();

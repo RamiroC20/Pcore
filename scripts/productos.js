@@ -22,9 +22,9 @@ function crearCardProducto(producto) {
         <p>${producto.descripcion}</p>
         <strong class="producto-precio">${formatearPrecio(producto.precio)}</strong>
         <div class="cantidad-producto">
-            <button class="cantidad-boton" type="button" data-accion="restar">−</button>
+            <button class="cantidad-boton" type="button" data-accion="restar" aria-label="Restar una unidad de ${producto.titulo}">−</button>
             <span class="cantidad-valor">1</span>
-            <button class="cantidad-boton" type="button" data-accion="sumar">+</button>
+            <button class="cantidad-boton" type="button" data-accion="sumar" aria-label="Sumar una unidad de ${producto.titulo}">+</button>
         </div>
         <button class="boton-agregar" type="button">Agregar al carrito</button>
     `;
@@ -74,6 +74,7 @@ function configurarEventos(contenedor, productos) {
             const productoId = Number(card.dataset.productoId);
             const producto = productos.find((item) => item.id === productoId);
             guardarEnCarrito(producto, cantidad);
+            window.dispatchEvent(new Event("carritoActualizado"));
 
             evento.target.textContent = "Agregado";
             setTimeout(() => {

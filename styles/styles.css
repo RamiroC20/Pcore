@@ -75,6 +75,17 @@ a {
     font-size: 13px;
 }
 
+.contador-carrito {
+    min-width: 28px;
+    padding: 5px 8px;
+    color: #0d0d0d;
+    background-color: #39ff14;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
 .presentacion {
     min-height: 500px;
     display: flex;
@@ -404,6 +415,21 @@ a {
     color: #cccccc;
 }
 
+.cantidad-carrito {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0;
+}
+
+.cantidad-carrito button {
+    width: 32px;
+    height: 32px;
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
 .boton-eliminar {
     margin-top: 0;
     color: #ffffff;
@@ -424,6 +450,17 @@ a {
 
 .carrito-total strong {
     color: #39ff14;
+}
+
+.boton-vaciar {
+    margin: 0 auto 0 0;
+    color: #ffffff;
+    background-color: #a52525;
+}
+
+.boton-vaciar:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
 }
 
 .carrito-vacio {
